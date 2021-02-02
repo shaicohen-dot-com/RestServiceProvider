@@ -1,0 +1,1169 @@
+[
+	{
+		"RawUrl": "/api/broadcast",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "broadcast",
+				"Value": "broadcast",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 2,
+				"Name": "BroadcastApi_CreateBroadcast",
+				"Parameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "CreateBroadcastVM"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "CreateBroadcastVM"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/broadcast/{id}",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "broadcast",
+				"Value": "broadcast",
+				"IsParameter": false
+			},
+			{
+				"Name": "id",
+				"Value": "",
+				"IsParameter": true
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "BroadcastApi_GetBroadcastById",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					},
+					{
+						"Name": "includeRecipients",
+						"Location": 3,
+						"IsRequired": false,
+						"Type": "boolean"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "id",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/broadcast/reference/{referenceId}",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "broadcast",
+				"Value": "broadcast",
+				"IsParameter": false
+			},
+			{
+				"Name": "reference",
+				"Value": "reference",
+				"IsParameter": false
+			},
+			{
+				"Name": "referenceId",
+				"Value": "",
+				"IsParameter": true
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "BroadcastApi_GetBroadcastByReferenceId",
+				"Parameters": [
+					{
+						"Name": "referenceId",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					},
+					{
+						"Name": "includeRecipients",
+						"Location": 3,
+						"IsRequired": false,
+						"Type": "boolean"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "referenceId",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/token",
+		"Fragments": [
+			{
+				"Name": "token",
+				"Value": "token",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 2,
+				"Name": "Indentity_token",
+				"Parameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "NetworkCredential"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "NetworkCredential"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/member/{mvdid}/dependants",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "member",
+				"Value": "member",
+				"IsParameter": false
+			},
+			{
+				"Name": "mvdid",
+				"Value": "",
+				"IsParameter": true
+			},
+			{
+				"Name": "dependants",
+				"Value": "dependants",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MemberApi_GetDependantsByMVDID",
+				"Parameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/member/{mvdid}/dependents",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "member",
+				"Value": "member",
+				"IsParameter": false
+			},
+			{
+				"Name": "mvdid",
+				"Value": "",
+				"IsParameter": true
+			},
+			{
+				"Name": "dependents",
+				"Value": "dependents",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MemberApi_GetDependentsByMVDID",
+				"Parameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/member/{mvdid}",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "member",
+				"Value": "member",
+				"IsParameter": false
+			},
+			{
+				"Name": "mvdid",
+				"Value": "",
+				"IsParameter": true
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MemberApi_GetPlanMemberByMVDID",
+				"Parameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/member/{mvdid}/documentLinks",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "member",
+				"Value": "member",
+				"IsParameter": false
+			},
+			{
+				"Name": "mvdid",
+				"Value": "",
+				"IsParameter": true
+			},
+			{
+				"Name": "documentLinks",
+				"Value": "documentLinks",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MemberApi_GetDocumentLinksByMVDID",
+				"Parameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/member/{mvdid}/threads",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "member",
+				"Value": "member",
+				"IsParameter": false
+			},
+			{
+				"Name": "mvdid",
+				"Value": "",
+				"IsParameter": true
+			},
+			{
+				"Name": "threads",
+				"Value": "threads",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MemberApi_GetThreadsByMVDID",
+				"Parameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/member/{mvdid}/registration",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "member",
+				"Value": "member",
+				"IsParameter": false
+			},
+			{
+				"Name": "mvdid",
+				"Value": "",
+				"IsParameter": true
+			},
+			{
+				"Name": "registration",
+				"Value": "registration",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MemberApi_GetRegistrationByMVDID",
+				"Parameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "mvdid",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/member/registrations",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "member",
+				"Value": "member",
+				"IsParameter": false
+			},
+			{
+				"Name": "registrations",
+				"Value": "registrations",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MemberApi_GetAllRegistrations",
+				"Parameters": [],
+				"RequiredParameters": []
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/messaging/threads",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "messaging",
+				"Value": "messaging",
+				"IsParameter": false
+			},
+			{
+				"Name": "threads",
+				"Value": "threads",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 2,
+				"Name": "MessageApi_CreateThreadAndMessage",
+				"Parameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "CreateThreadAndMessageVM"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "CreateThreadAndMessageVM"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/messaging/threads/{idThread}/messages",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "messaging",
+				"Value": "messaging",
+				"IsParameter": false
+			},
+			{
+				"Name": "threads",
+				"Value": "threads",
+				"IsParameter": false
+			},
+			{
+				"Name": "idThread",
+				"Value": "",
+				"IsParameter": true
+			},
+			{
+				"Name": "messages",
+				"Value": "messages",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MessageApi_GetMessagesByThreadId",
+				"Parameters": [
+					{
+						"Name": "idThread",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "idThread",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					}
+				]
+			},
+			{
+				"Method": 2,
+				"Name": "MessageApi_CreateMessage",
+				"Parameters": [
+					{
+						"Name": "idThread",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					},
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "CreateMessageVM"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "idThread",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					},
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "CreateMessageVM"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/messaging/threads/{idThread}",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "messaging",
+				"Value": "messaging",
+				"IsParameter": false
+			},
+			{
+				"Name": "threads",
+				"Value": "threads",
+				"IsParameter": false
+			},
+			{
+				"Name": "idThread",
+				"Value": "",
+				"IsParameter": true
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MessageApi_GetThreadById",
+				"Parameters": [
+					{
+						"Name": "idThread",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "idThread",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/messaging/threads/{idThread}/messages/{idMessage}",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "messaging",
+				"Value": "messaging",
+				"IsParameter": false
+			},
+			{
+				"Name": "threads",
+				"Value": "threads",
+				"IsParameter": false
+			},
+			{
+				"Name": "idThread",
+				"Value": "",
+				"IsParameter": true
+			},
+			{
+				"Name": "messages",
+				"Value": "messages",
+				"IsParameter": false
+			},
+			{
+				"Name": "idMessage",
+				"Value": "",
+				"IsParameter": true
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MessageApi_GetMessageByThreadIdandMessageId",
+				"Parameters": [
+					{
+						"Name": "idThread",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					},
+					{
+						"Name": "idMessage",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "idThread",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					},
+					{
+						"Name": "idMessage",
+						"Location": 1,
+						"IsRequired": true,
+						"Type": "System.Guid"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/messaging/messages",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "messaging",
+				"Value": "messaging",
+				"IsParameter": false
+			},
+			{
+				"Name": "messages",
+				"Value": "messages",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MessageApi_GetMessagesAfterDate",
+				"Parameters": [
+					{
+						"Name": "dateFromUTC",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					},
+					{
+						"Name": "entityTypes",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "array"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "dateFromUTC",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					},
+					{
+						"Name": "entityTypes",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "array"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/messaging/topics",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "messaging",
+				"Value": "messaging",
+				"IsParameter": false
+			},
+			{
+				"Name": "topics",
+				"Value": "topics",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MessageApi_GetTopics",
+				"Parameters": [
+					{
+						"Name": "mvdid",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "mvdid",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/messaging/recipients",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "messaging",
+				"Value": "messaging",
+				"IsParameter": false
+			},
+			{
+				"Name": "recipients",
+				"Value": "recipients",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "MessageApi_GetRecipients",
+				"Parameters": [
+					{
+						"Name": "mvdid",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "mvdid",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/user/register",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "user",
+				"Value": "user",
+				"IsParameter": false
+			},
+			{
+				"Name": "register",
+				"Value": "register",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 2,
+				"Name": "UserApi_RegisterMember",
+				"Parameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "RegistrationVM"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "RegistrationVM"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/user/login",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "user",
+				"Value": "user",
+				"IsParameter": false
+			},
+			{
+				"Name": "login",
+				"Value": "login",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "UserApi_LoginUser",
+				"Parameters": [
+					{
+						"Name": "userName",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					},
+					{
+						"Name": "password",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "userName",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					},
+					{
+						"Name": "password",
+						"Location": 3,
+						"IsRequired": true,
+						"Type": "string"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/user/password/forgot",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "user",
+				"Value": "user",
+				"IsParameter": false
+			},
+			{
+				"Name": "password",
+				"Value": "password",
+				"IsParameter": false
+			},
+			{
+				"Name": "forgot",
+				"Value": "forgot",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 2,
+				"Name": "UserApi_ForgotPassword",
+				"Parameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "ForgotPasswordVM"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "ForgotPasswordVM"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/user/password/change",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "user",
+				"Value": "user",
+				"IsParameter": false
+			},
+			{
+				"Name": "password",
+				"Value": "password",
+				"IsParameter": false
+			},
+			{
+				"Name": "change",
+				"Value": "change",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 2,
+				"Name": "UserApi_ChangePassword",
+				"Parameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "ChangePasswordVM"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "ChangePasswordVM"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/user/password/expired",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "user",
+				"Value": "user",
+				"IsParameter": false
+			},
+			{
+				"Name": "password",
+				"Value": "password",
+				"IsParameter": false
+			},
+			{
+				"Name": "expired",
+				"Value": "expired",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 2,
+				"Name": "UserApi_ExpiredPassword",
+				"Parameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "ExpiredPasswordVM"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "ExpiredPasswordVM"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/user/name/forgot",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "user",
+				"Value": "user",
+				"IsParameter": false
+			},
+			{
+				"Name": "name",
+				"Value": "name",
+				"IsParameter": false
+			},
+			{
+				"Name": "forgot",
+				"Value": "forgot",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 2,
+				"Name": "UserApi_ForgotUserName",
+				"Parameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "ForgotNameVM"
+					}
+				],
+				"RequiredParameters": [
+					{
+						"Name": "vm",
+						"Location": 2,
+						"IsRequired": true,
+						"Type": "ForgotNameVM"
+					}
+				]
+			}
+		]
+	},
+	{
+		"RawUrl": "/api/user/logout",
+		"Fragments": [
+			{
+				"Name": "api",
+				"Value": "api",
+				"IsParameter": false
+			},
+			{
+				"Name": "user",
+				"Value": "user",
+				"IsParameter": false
+			},
+			{
+				"Name": "logout",
+				"Value": "logout",
+				"IsParameter": false
+			}
+		],
+		"Operations": [
+			{
+				"Method": 1,
+				"Name": "UserApi_LogoutUser",
+				"Parameters": [],
+				"RequiredParameters": []
+			}
+		]
+	}
+]

@@ -1,0 +1,1678 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "VDT.Api.Mobile"
+  },
+  "host": "localhost:44334",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/broadcast": {
+      "post": {
+        "tags": [
+          "BroadcastApi"
+        ],
+        "operationId": "BroadcastApi_CreateBroadcast",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateBroadcastVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BroadcastVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/broadcast/{id}": {
+      "get": {
+        "tags": [
+          "BroadcastApi"
+        ],
+        "operationId": "BroadcastApi_GetBroadcastById",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "includeRecipients",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BroadcastVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/broadcast/reference/{referenceId}": {
+      "get": {
+        "tags": [
+          "BroadcastApi"
+        ],
+        "operationId": "BroadcastApi_GetBroadcastByReferenceId",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "referenceId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeRecipients",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BroadcastVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/token": {
+      "post": {
+        "tags": [
+          "Indentity"
+        ],
+        "operationId": "Indentity_token",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NetworkCredential"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TokenResponseModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/member/{mvdid}/dependants": {
+      "get": {
+        "tags": [
+          "MemberApi"
+        ],
+        "operationId": "MemberApi_GetDependantsByMVDID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "mvdid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PlanMemberVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/member/{mvdid}/dependents": {
+      "get": {
+        "tags": [
+          "MemberApi"
+        ],
+        "operationId": "MemberApi_GetDependentsByMVDID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "mvdid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PlanMemberVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/member/{mvdid}": {
+      "get": {
+        "tags": [
+          "MemberApi"
+        ],
+        "operationId": "MemberApi_GetPlanMemberByMVDID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "mvdid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PlanMemberVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/member/{mvdid}/documentLinks": {
+      "get": {
+        "tags": [
+          "MemberApi"
+        ],
+        "operationId": "MemberApi_GetDocumentLinksByMVDID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "mvdid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentLinkVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/member/{mvdid}/threads": {
+      "get": {
+        "tags": [
+          "MemberApi"
+        ],
+        "operationId": "MemberApi_GetThreadsByMVDID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "mvdid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ThreadVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/member/{mvdid}/registration": {
+      "get": {
+        "tags": [
+          "MemberApi"
+        ],
+        "operationId": "MemberApi_GetRegistrationByMVDID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "mvdid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PlanMemberRegistrationStatusVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/member/registrations": {
+      "get": {
+        "tags": [
+          "MemberApi"
+        ],
+        "operationId": "MemberApi_GetAllRegistrations",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PlanMemberRegistrationStatusVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/messaging/threads": {
+      "post": {
+        "tags": [
+          "MessageApi"
+        ],
+        "operationId": "MessageApi_CreateThreadAndMessage",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateThreadAndMessageVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ThreadVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/messaging/threads/{idThread}/messages": {
+      "get": {
+        "tags": [
+          "MessageApi"
+        ],
+        "operationId": "MessageApi_GetMessagesByThreadId",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "idThread",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MessageVM"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MessageApi"
+        ],
+        "operationId": "MessageApi_CreateMessage",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "idThread",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateMessageVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MessageVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/messaging/threads/{idThread}": {
+      "get": {
+        "tags": [
+          "MessageApi"
+        ],
+        "operationId": "MessageApi_GetThreadById",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "idThread",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ThreadVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/messaging/threads/{idThread}/messages/{idMessage}": {
+      "get": {
+        "tags": [
+          "MessageApi"
+        ],
+        "operationId": "MessageApi_GetMessageByThreadIdandMessageId",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "idThread",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "idMessage",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MessageVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/messaging/messages": {
+      "get": {
+        "tags": [
+          "MessageApi"
+        ],
+        "operationId": "MessageApi_GetMessagesAfterDate",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "dateFromUTC",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "entityTypes",
+            "in": "query",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ThreadVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/messaging/topics": {
+      "get": {
+        "tags": [
+          "MessageApi"
+        ],
+        "operationId": "MessageApi_GetTopics",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "mvdid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ThreadTopicVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/messaging/recipients": {
+      "get": {
+        "tags": [
+          "MessageApi"
+        ],
+        "operationId": "MessageApi_GetRecipients",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "mvdid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MessageRecipientVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/register": {
+      "post": {
+        "tags": [
+          "UserApi"
+        ],
+        "operationId": "UserApi_RegisterMember",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegistrationVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RegistrationResultVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/user/login": {
+      "get": {
+        "tags": [
+          "UserApi"
+        ],
+        "operationId": "UserApi_LoginUser",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LoginResultVM"
+            }
+          }
+        }
+      }
+    },
+    "/api/user/password/forgot": {
+      "post": {
+        "tags": [
+          "UserApi"
+        ],
+        "operationId": "UserApi_ForgotPassword",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ForgotPasswordVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/user/password/change": {
+      "post": {
+        "tags": [
+          "UserApi"
+        ],
+        "operationId": "UserApi_ChangePassword",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChangePasswordVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/user/password/expired": {
+      "post": {
+        "tags": [
+          "UserApi"
+        ],
+        "operationId": "UserApi_ExpiredPassword",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExpiredPasswordVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/user/name/forgot": {
+      "post": {
+        "tags": [
+          "UserApi"
+        ],
+        "operationId": "UserApi_ForgotUserName",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ForgotNameVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/api/user/logout": {
+      "get": {
+        "tags": [
+          "UserApi"
+        ],
+        "operationId": "UserApi_LogoutUser",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateBroadcastVM": {
+      "required": [
+        "Broadcast",
+        "Recipients",
+        "CreatedBy"
+      ],
+      "type": "object",
+      "properties": {
+        "Broadcast": {
+          "$ref": "#/definitions/BroadcastNewVM"
+        },
+        "Recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RecipientNewVM"
+          }
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/CreatorNewVM"
+        },
+        "Link": {
+          "$ref": "#/definitions/LinkNewVM"
+        }
+      }
+    },
+    "BroadcastNewVM": {
+      "required": [
+        "IdTopic",
+        "Title",
+        "Content"
+      ],
+      "type": "object",
+      "properties": {
+        "IdTopic": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Title": {
+          "maxLength": 50,
+          "minLength": 2,
+          "type": "string"
+        },
+        "Content": {
+          "maxLength": 8000,
+          "minLength": 0,
+          "type": "string"
+        },
+        "ExternalReferenceId": {
+          "type": "string"
+        }
+      }
+    },
+    "RecipientNewVM": {
+      "required": [
+        "MVDID"
+      ],
+      "type": "object",
+      "properties": {
+        "MVDID": {
+          "type": "string"
+        }
+      }
+    },
+    "CreatorNewVM": {
+      "required": [
+        "Id",
+        "TypeId"
+      ],
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "TypeId": {
+          "type": "string"
+        }
+      }
+    },
+    "LinkNewVM": {
+      "required": [
+        "Title",
+        "Url"
+      ],
+      "type": "object",
+      "properties": {
+        "Title": {
+          "type": "string"
+        },
+        "Url": {
+          "type": "string"
+        }
+      }
+    },
+    "BroadcastVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "IdTopic": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "ExternalReferenceId": {
+          "type": "string"
+        },
+        "Creator_Id": {
+          "type": "string"
+        },
+        "Creator_Type": {
+          "type": "string"
+        },
+        "Recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RecipientVM"
+          }
+        },
+        "Links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkVM"
+          }
+        }
+      }
+    },
+    "RecipientVM": {
+      "type": "object",
+      "properties": {
+        "MVDID": {
+          "type": "string"
+        },
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "IdBroadcast": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "IsRegistered": {
+          "type": "boolean"
+        }
+      }
+    },
+    "LinkVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "IdParent": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Url": {
+          "type": "string"
+        },
+        "CreatorId": {
+          "type": "string"
+        },
+        "CreatorTypeId": {
+          "type": "string"
+        },
+        "DateCreated": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "NetworkCredential": {
+      "type": "object",
+      "properties": {
+        "UserName": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "SecurePassword": {
+          "$ref": "#/definitions/SecureString"
+        },
+        "Domain": {
+          "type": "string"
+        }
+      }
+    },
+    "SecureString": {
+      "type": "object",
+      "properties": {
+        "Length": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        }
+      }
+    },
+    "TokenResponseModel": {
+      "type": "object",
+      "properties": {
+        "Token": {
+          "type": "string"
+        },
+        "RefreshToken": {
+          "type": "string"
+        }
+      }
+    },
+    "PlanMemberVM": {
+      "type": "object",
+      "properties": {
+        "MVDID": {
+          "type": "string"
+        },
+        "NameFirst": {
+          "type": "string"
+        },
+        "NameMiddle": {
+          "type": "string"
+        },
+        "NameLast": {
+          "type": "string"
+        },
+        "NameFull": {
+          "type": "string"
+        },
+        "IsActive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "DocumentLinkVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Url": {
+          "type": "string"
+        }
+      }
+    },
+    "ThreadVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "IdMember": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "IdTopic": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "TopicName": {
+          "type": "string"
+        },
+        "IdRecipient": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageVM"
+          }
+        },
+        "LastMessageDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ContentPreview": {
+          "type": "string"
+        },
+        "AllowedActions": {
+          "format": "int32",
+          "enum": [
+            1
+          ],
+          "type": "integer"
+        }
+      }
+    },
+    "MessageVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "IdThread": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "DateSent": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Creator": {
+          "$ref": "#/definitions/PlanEntityVM"
+        },
+        "IsMember": {
+          "type": "boolean"
+        },
+        "CreatorName": {
+          "type": "string"
+        }
+      }
+    },
+    "PlanEntityVM": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/PlanEntityTypeVM"
+        }
+      }
+    },
+    "PlanEntityTypeVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "PlanMemberRegistrationStatusVM": {
+      "type": "object",
+      "properties": {
+        "MVDID": {
+          "type": "string"
+        },
+        "IsRegistered": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CreateThreadAndMessageVM": {
+      "required": [
+        "Thread",
+        "Message"
+      ],
+      "type": "object",
+      "properties": {
+        "Thread": {
+          "$ref": "#/definitions/ThreadNewVM"
+        },
+        "Message": {
+          "$ref": "#/definitions/MessageNewVM"
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/CreatorNewVM"
+        },
+        "Link": {
+          "$ref": "#/definitions/LinkNewVM"
+        }
+      }
+    },
+    "ThreadNewVM": {
+      "required": [
+        "IdMember",
+        "IdTopic",
+        "Title"
+      ],
+      "type": "object",
+      "properties": {
+        "IdMember": {
+          "maxLength": 30,
+          "minLength": 1,
+          "type": "string"
+        },
+        "IdTopic": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Title": {
+          "maxLength": 50,
+          "minLength": 2,
+          "type": "string"
+        },
+        "IdRecipient": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    },
+    "MessageNewVM": {
+      "required": [
+        "Content"
+      ],
+      "type": "object",
+      "properties": {
+        "Content": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateMessageVM": {
+      "required": [
+        "Message"
+      ],
+      "type": "object",
+      "properties": {
+        "Message": {
+          "$ref": "#/definitions/MessageNewVM"
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/CreatorNewVM"
+        },
+        "Link": {
+          "$ref": "#/definitions/LinkNewVM"
+        },
+        "Creator": {
+          "$ref": "#/definitions/PlanEntityVM"
+        }
+      }
+    },
+    "ThreadTopicVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "readOnly": true,
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Label": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "MessageRecipientVM": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        }
+      }
+    },
+    "RegistrationVM": {
+      "required": [
+        "UserName",
+        "Password",
+        "IdMember",
+        "MemberName",
+        "LastFourSsn",
+        "DateOfBirth"
+      ],
+      "type": "object",
+      "properties": {
+        "UserName": {
+          "maxLength": 30,
+          "minLength": 5,
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "PasswordConfirm": {
+          "type": "string"
+        },
+        "IdMember": {
+          "type": "string"
+        },
+        "MemberName": {
+          "type": "string"
+        },
+        "LastFourSsn": {
+          "maxLength": 4,
+          "minLength": 4,
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "RegistrationResultVM": {
+      "type": "object",
+      "properties": {
+        "IsSuccess": {
+          "type": "boolean"
+        },
+        "Token": {
+          "type": "string"
+        },
+        "User": {
+          "$ref": "#/definitions/ApplicationUserVM"
+        }
+      }
+    },
+    "ApplicationUserVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "IdExternal": {
+          "type": "string"
+        },
+        "UserType": {
+          "type": "string"
+        },
+        "NameFirst": {
+          "type": "string"
+        },
+        "NameMiddle": {
+          "type": "string"
+        },
+        "NameLast": {
+          "type": "string"
+        },
+        "NameFull": {
+          "type": "string"
+        },
+        "StatusCode": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "type": "integer"
+        }
+      }
+    },
+    "LoginResultVM": {
+      "type": "object",
+      "properties": {
+        "IsSuccess": {
+          "type": "boolean"
+        },
+        "Token": {
+          "type": "string"
+        },
+        "User": {
+          "$ref": "#/definitions/ApplicationUserVM"
+        },
+        "Status": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "type": "integer"
+        }
+      }
+    },
+    "ForgotPasswordVM": {
+      "required": [
+        "UserName",
+        "Password",
+        "IdMember",
+        "MemberName",
+        "LastFourSsn",
+        "DateOfBirth"
+      ],
+      "type": "object",
+      "properties": {
+        "UserName": {
+          "maxLength": 30,
+          "minLength": 5,
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "PasswordConfirm": {
+          "type": "string"
+        },
+        "IdMember": {
+          "type": "string"
+        },
+        "MemberName": {
+          "type": "string"
+        },
+        "LastFourSsn": {
+          "maxLength": 4,
+          "minLength": 4,
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "ChangePasswordVM": {
+      "required": [
+        "IdAppUser",
+        "PasswordExisting",
+        "PasswordNew"
+      ],
+      "type": "object",
+      "properties": {
+        "IdAppUser": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "PasswordExisting": {
+          "type": "string"
+        },
+        "PasswordNew": {
+          "type": "string"
+        },
+        "PasswordNewConfirm": {
+          "type": "string"
+        }
+      }
+    },
+    "ExpiredPasswordVM": {
+      "required": [
+        "UserName",
+        "PasswordExisting",
+        "PasswordNew"
+      ],
+      "type": "object",
+      "properties": {
+        "UserName": {
+          "type": "string"
+        },
+        "PasswordExisting": {
+          "type": "string"
+        },
+        "PasswordNew": {
+          "type": "string"
+        },
+        "PasswordNewConfirm": {
+          "type": "string"
+        }
+      }
+    },
+    "ForgotNameVM": {
+      "required": [
+        "IdMember",
+        "MemberName",
+        "LastFourSsn",
+        "DateOfBirth"
+      ],
+      "type": "object",
+      "properties": {
+        "IdMember": {
+          "type": "string"
+        },
+        "MemberName": {
+          "type": "string"
+        },
+        "LastFourSsn": {
+          "maxLength": 4,
+          "minLength": 4,
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
