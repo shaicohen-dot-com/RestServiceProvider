@@ -1,8 +1,8 @@
 ﻿using System.IO;
 using System.Text.Json;
-using VDT.Common.ServiceProvider.Endpoint;
+using RestServiceProviderServiceProvider.Endpoint;
 
-namespace VDT.Common.ServiceProvider.ApiSpeciification
+namespace RestServiceProviderServiceProvider.ApiSpeciification
 {
 	internal class JsonSpecificationProvider : IApiSpecificationProvider
 	{

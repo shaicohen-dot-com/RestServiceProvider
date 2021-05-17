@@ -1,6 +1,6 @@
-﻿using VDT.Common.ServiceProvider.Endpoint;
+﻿using RestServiceProviderServiceProvider.Endpoint;
 
-namespace VDT.Common.ServiceProvider.ApiSpeciification
+namespace RestServiceProviderServiceProvider.ApiSpeciification
 {
 	internal class InstanceSpecificationProvider : IApiSpecificationProvider
 	{

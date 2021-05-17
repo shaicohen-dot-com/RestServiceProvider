@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
-using VDT.Common.ServiceProvider.Models;
+using RestServiceProviderServiceProvider.Models;
 
-namespace VDT.Common.ServiceProvider.Interfaces
+namespace RestServiceProviderServiceProvider.Interfaces
 {
 	public interface ITokenProvider
 	{

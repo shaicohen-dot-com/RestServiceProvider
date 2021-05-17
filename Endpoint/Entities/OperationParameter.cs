@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text.Json.Serialization;
-using VDT.Common.ServiceProvider.Endpoint.Enums;
+using RestServiceProviderServiceProvider.Endpoint.Enums;
 
-namespace VDT.Common.ServiceProvider.Endpoint.Entities
+namespace RestServiceProviderServiceProvider.Endpoint.Entities
 {
 	public class OperationParameter
 	{

@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
-using VDT.Common.ServiceProvider.Endpoint.Entities;
-using VDT.Common.ServiceProvider.Endpoint.Enums;
-using VDT.Common.ServiceProvider.Models.Endpoint;
-using VDT.Utilities;
-using VDT.Utilities.Collections;
-using VDT.Utilities.Exceptions;
+using RestServiceProviderServiceProvider.Endpoint.Entities;
+using RestServiceProviderServiceProvider.Endpoint.Enums;
+using RestServiceProviderServiceProvider.Models.Endpoint;
 
-namespace VDT.Common.ServiceProvider.Endpoint
+namespace RestServiceProviderServiceProvider.Endpoint
 {
 	internal class EndpointManager
 	{

@@ -1,4 +1,4 @@
-﻿namespace VDT.Common.ServiceProvider.Enums
+﻿namespace RestServiceProviderServiceProvider.Enums
 {
 	internal enum GrantTypes
 	{

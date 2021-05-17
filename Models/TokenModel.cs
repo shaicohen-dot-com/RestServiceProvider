@@ -1,19 +1,18 @@
-﻿//using System.Text.Json.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-namespace VDT.Common.ServiceProvider.Models
+﻿using System.Text.Json.Serialization;
+
+namespace RestServiceProviderServiceProvider.Models
 {
 	public class TokenModel
 	{
 		public static TokenModel Empty() => new TokenModel();
 
-		[JsonProperty("access_token")]
+		[JsonPropertyName("access_token")]
 		public string Token { get; set; }
-		[JsonProperty("refresh_token")]
+		[JsonPropertyName("refresh_token")]
 		public string RefreshToken { get; set; }
-		[JsonProperty("expires_in")]
+		[JsonPropertyName("expires_in")]
 		public uint ExpiresIn { get; set; }
-		[JsonProperty("token_type")]
+		[JsonPropertyName("token_type")]
 		public string TokenType { get; set; }
 	}
 }

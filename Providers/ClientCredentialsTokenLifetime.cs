@@ -1,9 +1,8 @@
 ﻿using System;
-using VDT.Common.ServiceProvider.Interfaces;
-using VDT.Common.ServiceProvider.Models;
-using VDT.Utilities.Logging;
+using RestServiceProviderServiceProvider.Interfaces;
+using RestServiceProviderServiceProvider.Models;
 
-namespace VDT.Common.ServiceProvider.Providers
+namespace RestServiceProviderServiceProvider.Providers
 {
 	public class ClientCredentialsTokenLifetime : ITokenLifetime 
 	{
@@ -35,7 +34,6 @@ namespace VDT.Common.ServiceProvider.Providers
 
 		private void SetTimer(long expiresInLong)
 		{
-			new Exception().SetMethod(nameof(ClientCredentialsTokenLifetime), nameof(SetTimer)).AddInstanceValue(() => expiresInLong).Log($"Token Timer Elapsed: {DateTimeOffset.UtcNow}");
 			int expiresIn = ConvertOAuthTokenExpiresInFromLongToInt32(expiresInLong);
 			//new Exception().Log($"Token Timer Elapsed: {DateTimeOffset.UtcNow} | expireInLong: {expiresInLong} | expiresIn: {expiresIn} | Interval: {expiresIn - secondsBeforeExpiration} | secondsBeforeExpiration: {secondsBeforeExpiration}");
 			updateTimer.Stop();

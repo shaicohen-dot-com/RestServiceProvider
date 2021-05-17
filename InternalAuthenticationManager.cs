@@ -4,9 +4,9 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using VDT.Common.ServiceProvider.Interfaces;
+using RestServiceProviderServiceProvider.Interfaces;
 
-namespace VDT.Common.ServiceProvider
+namespace RestServiceProviderServiceProvider
 {
 	public class InternalAuthenticationManager : IAuthenticationManager
 	//where R : ITokenRetrieval
@@ -76,21 +76,5 @@ namespace VDT.Common.ServiceProvider
 		}
 
 	}
-
-	//public class AuthenticationHeaderValue
-	//{
-
-	//	public string Parameter { get; set; }
-	//	public string Scheme { get; set; }
-	//	public AuthenticationHeaderValue()
-	//	{
-
-	//	}
-	//	public AuthenticationHeaderValue(string scheme, string parameter)
-	//	{
-	//		Parameter = parameter;
-	//		Scheme = scheme;
-	//	}
-	//}
 
 }

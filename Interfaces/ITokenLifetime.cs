@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VDT.Common.ServiceProvider.Interfaces
+namespace RestServiceProviderServiceProvider.Interfaces
 {
 	public interface ITokenLifetime
 	{

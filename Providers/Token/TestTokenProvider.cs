@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
-using VDT.Common.ServiceProvider.Interfaces;
-using VDT.Common.ServiceProvider.Models;
+using RestServiceProviderServiceProvider.Interfaces;
+using RestServiceProviderServiceProvider.Models;
 
-namespace VDT.Common.ServiceProvider.Providers
+namespace RestServiceProviderServiceProvider.Providers
 {
 	public class TestTokenProvider : ITokenProvider
 	{

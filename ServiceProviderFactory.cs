@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
-using VDT.Common.ServiceProvider.ApiSpeciification;
-using VDT.Common.ServiceProvider.Interfaces;
+using RestServiceProviderServiceProvider.ApiSpeciification;
+using RestServiceProviderServiceProvider.Interfaces;
 
-namespace VDT.Common.ServiceProvider
+namespace RestServiceProviderServiceProvider
 {
 	public static class ServiceProviderFactory
 	{

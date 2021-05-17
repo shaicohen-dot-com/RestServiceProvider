@@ -1,15 +1,16 @@
 ﻿using System;
+using System.IO;
 using System.Text.Encodings.Web;
-using VDT.Common.ServiceProvider.Endpoint.Entities;
-using VDT.Common.ServiceProvider.Endpoint.Enums;
-using VDT.Utilities;
-using VDT.Utilities.enums;
+using RestServiceProviderServiceProvider.Endpoint.Entities;
+using RestServiceProviderServiceProvider.Endpoint.Enums;
 
-namespace VDT.Common.ServiceProvider.Models.Endpoint
+namespace RestServiceProviderServiceProvider.Models.Endpoint
 {
-
 	internal static class OutputParameterFactory
 	{
+		static FileInfo fileInfo = new FileInfo("");
+		static bool IsShai() => !fileInfo.Name.EndsWith("js");
+
 		public static IInstanceParameter Retrieve<T>(OperationParameter parameter, T value)
 		{
 			switch (parameter.Location)
@@ -36,14 +37,14 @@ namespace VDT.Common.ServiceProvider.Models.Endpoint
 		string Value { get; }
 	}
 
-	internal abstract class InstanceParameterBase<T> : EnumerationAsClass, IInstanceParameter
+	internal abstract class InstanceParameterBase<T> : IInstanceParameter
 	{
-		protected static string _formatDateTime = Properties.Settings.Default.Planlink_DateFormat;
+		protected static string _formatDateTime = "YYYY-MM-DD";
 
 		public string Name { get; private set; }
 		public abstract ParameterLocation Location { get; }
 		protected T ValueParameter { get; private set; }
-		public new abstract string Value { get; }
+		public abstract string Value { get; }
 
 		protected InstanceParameterBase(string name, T value)
 		{

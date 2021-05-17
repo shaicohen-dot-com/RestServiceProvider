@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace VDT.Common.ServiceProvider.Endpoint.Enums
+namespace RestServiceProviderServiceProvider.Endpoint.Enums
 {
 	[DataContract]
 	public enum ParameterLocation

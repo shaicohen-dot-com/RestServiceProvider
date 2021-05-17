@@ -1,4 +1,4 @@
-﻿namespace VDT.Common.ServiceProvider.ApiSpeciification
+﻿namespace RestServiceProviderServiceProvider.ApiSpeciification
 {
 	public enum SpecificationSource
 	{

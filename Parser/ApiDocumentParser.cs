@@ -4,13 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Web;
-using VDT.Common.ServiceProvider.Endpoint;
-using VDT.Common.ServiceProvider.Endpoint.Entities;
-using VDT.Common.ServiceProvider.Endpoint.Enums;
-using VDT.Utilities.Exceptions;
+using RestServiceProviderServiceProvider.Endpoint;
+using RestServiceProviderServiceProvider.Endpoint.Entities;
+using RestServiceProviderServiceProvider.Endpoint.Enums;
 
-namespace VDT.Common.ServiceProvider.Parser
+namespace RestServiceProviderServiceProvider.Parser
 {
 	internal static class ApiSwaggerDocumentParser
 	{
@@ -47,17 +45,18 @@ namespace VDT.Common.ServiceProvider.Parser
 						});
 
 			IEnumerable<OperationParameter> getParameters(IEnumerable<Parameter> parameters) =>
-				!ArgumentExceptionMethods.IsArgumentException(parameters) ?
-					parameters.Select(p =>
-						new OperationParameter
-						{
-							Name = p.Name,
-							Type = (ParameterValueType)(Enum.Parse(typeof(ParameterValueType), p.Type, true)),
-							IsRequired = p.Required,
-							Location = p.In
-						})
-					: new List<OperationParameter>();
-
+				parameters is null || parameters.Count() < 1 ?
+					new List<OperationParameter>()
+					: parameters
+						.Where(p => p != null)
+						.Select(p =>
+							new OperationParameter
+							{
+								Name = p.Name,
+								Type = (ParameterValueType)(Enum.Parse(typeof(ParameterValueType), p.Type, true)),
+								IsRequired = p.Required,
+								Location = p.In
+							});
 		}
 	}
 

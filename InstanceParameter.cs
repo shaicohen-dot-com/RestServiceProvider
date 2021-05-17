@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VDT.Common.ServiceProvider
+namespace RestServiceProviderServiceProvider
 {
 	//public class InstanceParameter : OperationParameter
 	//{

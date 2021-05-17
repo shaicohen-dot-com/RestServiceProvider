@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using VDT.Common.ServiceProvider.Endpoint.Entities;
+using RestServiceProviderServiceProvider.Endpoint.Entities;
 
-namespace VDT.Common.ServiceProvider.Interfaces
+namespace RestServiceProviderServiceProvider.Interfaces
 {
 	public interface IVdtServiceProvider
 	{

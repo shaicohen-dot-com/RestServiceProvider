@@ -1,7 +1,7 @@
-﻿using VDT.Common.ServiceProvider.ApiSpeciification;
-using VDT.Common.ServiceProvider.Endpoint;
+﻿using RestServiceProviderServiceProvider.ApiSpeciification;
+using RestServiceProviderServiceProvider.Endpoint;
 
-namespace VDT.Common.ServiceProvider
+namespace RestServiceProviderServiceProvider
 {
 	internal static class EndpointManagerFactory
 	{

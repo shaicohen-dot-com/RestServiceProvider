@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace VDT.Common.ServiceProvider
+namespace RestServiceProviderServiceProvider
 {
 	[DataContract]
 	public enum OperationMethod

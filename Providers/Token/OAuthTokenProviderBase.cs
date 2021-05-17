@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text.Json;
 using System.Threading.Tasks;
-using VDT.Common.ServiceProvider.Enums;
-using VDT.Common.ServiceProvider.Interfaces;
-using VDT.Common.ServiceProvider.Models;
-using VDT.Utilities.Logging;
+using RestServiceProviderServiceProvider.Enums;
+using RestServiceProviderServiceProvider.Interfaces;
+using RestServiceProviderServiceProvider.Models;
 
-namespace VDT.Common.ServiceProvider.Providers
+namespace RestServiceProviderServiceProvider.Providers
 {
 	public abstract class OAuthTokenProviderBase : ITokenProvider
 	{
@@ -115,28 +115,16 @@ namespace VDT.Common.ServiceProvider.Providers
 					throw new Exception("No Token");
 
 				TokenModel token =
-					await response.Content.ReadAsAsync<TokenModel>();
-
-				if (response is null)
-					return TokenModel.Empty(); //TODO: handle
+					await JsonSerializer.DeserializeAsync<TokenModel>(
+						await response.Content.ReadAsStreamAsync());
 
 				return token;
 
 			}
-			catch (Exception ex) when (ex.IsNotLogged())
+			catch (Exception) 
 			{
-				ex.SetMethod(signature())
-					.AddInstanceValue(() => requestMessage)
-					.AddInstanceValue(() => response)
-					.Log("Error retrieving a token.");
 				throw;
-
-				(string, string) signature() =>
-					(nameof(OAuthTokenProviderBase),
-					$@"private async Task<{nameof(TokenModel)}> {nameof(GetTokenAsync)} (
-						HttpRequestMessage {nameof(requestMessage)}");
 			}
-
 		}
 
 		public virtual async Task<TokenModel> GenerateTokenAsync(NetworkCredential credentialResourceOwner)

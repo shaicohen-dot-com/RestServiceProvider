@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VDT.Common.ServiceProvider.Interfaces
+namespace RestServiceProviderServiceProvider.Interfaces
 {
 	/// <summary>
 	/// Provides the number of seconds to wait before attempting to refresh a token.

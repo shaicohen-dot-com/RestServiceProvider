@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text.Json.Serialization;
+using System.Text.Json;
 using System.Threading.Tasks;
-using VDT.Common.ServiceProvider.ApiSpeciification;
-using VDT.Common.ServiceProvider.Endpoint;
-using VDT.Common.ServiceProvider.Endpoint.Entities;
-using VDT.Common.ServiceProvider.Entities;
-using VDT.Common.ServiceProvider.Interfaces;
-using VDT.Core.Enums;
-using VDT.Utilities;
-using VDT.Utilities.Collections;
-using VDT.Utilities.Types;
+using RestServiceProviderServiceProvider.ApiSpeciification;
+using RestServiceProviderServiceProvider.Endpoint;
+using RestServiceProviderServiceProvider.Endpoint.Entities;
+using RestServiceProviderServiceProvider.Interfaces;
 
-namespace VDT.Common.ServiceProvider
+namespace RestServiceProviderServiceProvider
 {
 
 	internal class InternalServiceProvider : IVdtServiceProvider
@@ -31,7 +26,7 @@ namespace VDT.Common.ServiceProvider
 
 		internal InternalServiceProvider(Uri uriApi, IAuthenticationManager authenticationManager, IApiSpecificationProvider specificationProvider)
 		{
-			if (!uriApi.IsAbsoluteUri) 
+			if (!uriApi.IsAbsoluteUri)
 				throw new Exception("uriBase is not absolute");
 
 			Uri uriApiValidated = new Uri(
@@ -84,9 +79,9 @@ namespace VDT.Common.ServiceProvider
 			request.Headers.Authorization =
 				await AuthenticationManager.GetAuthenticationHeader();
 
-			if (request.RequestUri.IsAbsoluteUri) 
+			if (request.RequestUri.IsAbsoluteUri)
 				throw new Exception($"HttpRequestMessage.RequestUri must be UriKind.Relative");
-			
+
 			EnsurePathHasNoLeadingForwardSlashes();
 
 			HttpResponseMessage response =
@@ -96,7 +91,9 @@ namespace VDT.Common.ServiceProvider
 				return default;
 
 			T payload =
-					await response.Content.ReadAsAsync<T>();
+					await JsonSerializer.DeserializeAsync<T>(
+						await response.Content.ReadAsStreamAsync());
+
 			return payload;
 
 			void EnsurePathHasNoLeadingForwardSlashes()

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net;
-using VDT.Common.ServiceProvider.Enums;
+using RestServiceProviderServiceProvider.Enums;
 
-namespace VDT.Common.ServiceProvider.Entities
+namespace RestServiceProviderServiceProvider.Entities
 {
 	//internal class ProviderConfiguration
 	//{

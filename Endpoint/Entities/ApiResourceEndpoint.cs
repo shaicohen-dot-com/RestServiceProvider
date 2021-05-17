@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VDT.Common.ServiceProvider.Endpoint.Entities;
-using VDT.Common.ServiceProvider.Parser;
+using RestServiceProviderServiceProvider.Endpoint.Entities;
+using RestServiceProviderServiceProvider.Parser;
 
-namespace VDT.Common.ServiceProvider.Endpoint.Entities
+namespace RestServiceProviderServiceProvider.Endpoint.Entities
 {
 	public class ApiResourceEndpoint
 	{

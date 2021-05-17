@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using VDT.Common.ServiceProvider.Models;
-using VDT.Utilities.Collections;
-using VDT.Utilities.Types;
+using RestServiceProviderServiceProvider.Models;
+using RestServiceProviderServiceProvider.Utilities;
 
-namespace VDT.Common.ServiceProvider.Providers
+namespace RestServiceProviderServiceProvider.Providers
 {
+
 	public class ResourceOwnerTokenProvider : OAuthTokenProviderBase
 	{
 		public ResourceOwnerTokenProvider(Uri uriApi, NetworkCredential credentialInternal, NetworkCredential credentialResourceOwner, Uri tokenPath, Uri refreshPath)
@@ -18,12 +18,10 @@ namespace VDT.Common.ServiceProvider.Providers
 			: base(uriApi, credentialInternal, tokenPath) { }
 
 		protected override IEnumerable<KeyValuePair<string, string>> Content =>
-			new KeyValuePair<string, string>("grant_type", "password")
-				.StartEnumerable(
-					new KeyValuePair<string, string>("username", CredentialResourceOwner.UserName),
-					new KeyValuePair<string, string>("password", CredentialResourceOwner.Password));
-					//new KeyValuePair<string, string>("client_id", CredentialInternal.UserName),
-					//new KeyValuePair<string, string>("client_secret", CredentialInternal.Password));
+			new KeyValuePair<string, string>[]{
+				new KeyValuePair<string, string>("grant_type", "password"), 
+				new KeyValuePair<string, string>("username", CredentialResourceOwner.UserName),
+				new KeyValuePair<string, string>("password", CredentialResourceOwner.Password)};
 
 		public override async Task<TokenModel> GenerateTokenAsync(NetworkCredential credentialResourceOwner) =>
 			await base.GenerateTokenAsync(credentialResourceOwner);

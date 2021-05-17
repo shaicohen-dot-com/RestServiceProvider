@@ -1,4 +1,4 @@
-﻿namespace VDT.Common.ServiceProvider.Endpoint.Entities
+﻿namespace RestServiceProviderServiceProvider.Endpoint.Entities
 {
 	public class ParameterValue
 	{

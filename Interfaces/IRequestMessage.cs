@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using VDT.Utilities;
-
-namespace VDT.Common.ServiceProvider.Interfaces
+using System.Text.Json;
+namespace RestServiceProviderServiceProvider.Interfaces
 {
 	internal interface IRequestMessage
 	{
@@ -68,7 +64,7 @@ namespace VDT.Common.ServiceProvider.Interfaces
 		private T Payload { get; set; } = default;
 		protected override HttpContent MessageContent =>
 			new StringContent(
-				Payload.Serialize(),
+				JsonSerializer.Serialize<T>(Payload),
 				System.Text.Encoding.UTF8,
 				"application/json");
 

@@ -1,8 +1,8 @@
 ﻿using System.IO;
-using VDT.Common.ServiceProvider.Endpoint;
-using VDT.Common.ServiceProvider.Parser;
+using RestServiceProviderServiceProvider.Endpoint;
+using RestServiceProviderServiceProvider.Parser;
 
-namespace VDT.Common.ServiceProvider.ApiSpeciification
+namespace RestServiceProviderServiceProvider.ApiSpeciification
 {
 	internal class SwaggerSpecificationProvider : IApiSpecificationProvider
 	{
