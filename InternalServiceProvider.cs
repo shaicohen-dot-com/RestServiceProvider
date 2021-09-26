@@ -13,7 +13,7 @@ using RestServiceProviderServiceProvider.Interfaces;
 namespace RestServiceProviderServiceProvider
 {
 
-	internal class InternalServiceProvider : IVdtServiceProvider
+	internal class InternalServiceProvider : IInternalServiceProvider
 	{
 		private HttpClient apiResource = null;
 		private EndpointManager EndpointStore { get; set; }

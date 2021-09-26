@@ -10,7 +10,7 @@ namespace RestServiceProviderServiceProvider.ApiSpeciification
 		public EndpointManager ApiDefinition { get; protected set; }
 		public SwaggerSpecificationProvider(string filePath)
 		{
-			ApiDefinition = ApiSwaggerDocumentParser.Parse(
+			ApiDefinition = SwaggerSpecificationParser.Parse(
 				File.ReadAllText(filePath))
 					.ToManager();
 		}

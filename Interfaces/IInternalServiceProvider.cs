@@ -4,7 +4,7 @@ using RestServiceProviderServiceProvider.Endpoint.Entities;
 
 namespace RestServiceProviderServiceProvider.Interfaces
 {
-	public interface IVdtServiceProvider
+	public interface IInternalServiceProvider
 	{
 		Task<T> RunAsync<T>(string operationName, IEnumerable<ParameterValue> parameterValues = null);
 	}

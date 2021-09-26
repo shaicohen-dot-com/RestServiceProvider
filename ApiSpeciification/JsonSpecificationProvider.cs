@@ -4,6 +4,9 @@ using RestServiceProviderServiceProvider.Endpoint;
 
 namespace RestServiceProviderServiceProvider.ApiSpeciification
 {
+	/// <summary>
+	/// use this provider if you are reading from a json serialized instance of EndpointManager
+	/// </summary>
 	internal class JsonSpecificationProvider : IApiSpecificationProvider
 	{
 		public SpecificationSource Source { get; } = SpecificationSource.JsonFile;

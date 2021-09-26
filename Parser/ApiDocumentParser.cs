@@ -10,7 +10,13 @@ using RestServiceProviderServiceProvider.Endpoint.Enums;
 
 namespace RestServiceProviderServiceProvider.Parser
 {
-	internal static class ApiSwaggerDocumentParser
+	/// <summary>
+	/// converts a swagger api document into an EndPointManager
+	/// <para>this parser was hacked together for a specific set of api calls. 
+	/// should probably be replaced with an openapi spec compliant parser
+	/// </para>
+	/// </summary>
+	internal static class SwaggerSpecificationParser
 	{
 
 		public static ApiDocument Parse(string apiDefinition)

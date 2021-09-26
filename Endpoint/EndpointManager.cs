@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
+
 using RestServiceProviderServiceProvider.Endpoint.Entities;
 using RestServiceProviderServiceProvider.Endpoint.Enums;
 using RestServiceProviderServiceProvider.Models.Endpoint;
@@ -54,6 +54,9 @@ namespace RestServiceProviderServiceProvider.Endpoint
 				GetBodyContent(instanceParameters);
 
 		}
+
+		public bool HasRequest(string name) =>
+			Endpoints.Any(e => e.ContainsOperation(name));
 
 		private string GetQueryString(IEnumerable<IInstanceParameter> instanceParameters) => //join query parameters by "&". 
 			string.Join("&", instanceParameters //if there are no query parameters, output is an empty string
@@ -172,21 +175,5 @@ namespace RestServiceProviderServiceProvider.Endpoint
 			return outputParameters;
 		}
 
-		public bool HasRequest(string name) =>
-			Endpoints.Any(e => e.ContainsOperation(name));
-
-		public class ApiRequestPayload
-		{
-			public ApiResourceEndpoint Endpoint { get; set; } = null;
-			public EndpointOperation Operation { get; set; } = null;
-			public IEnumerable<ParameterValue> ParameterValues { get; set; } = null;
-
-			internal ApiRequestPayload(ApiResourceEndpoint endpoint, string operationName, IEnumerable<ParameterValue> parameterValues)
-			{
-				Endpoint = endpoint;
-				Operation = endpoint.GetOperation(operationName);
-				ParameterValues = parameterValues;
-			}
-		}
 	}
 }

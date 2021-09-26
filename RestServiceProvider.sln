@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31710.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestServiceProvider", "RestServiceProvider.csproj", "{0C78C38D-63E3-49BA-BF90-EE36B1071727}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "..\Extensions\Extensions.csproj", "{C2975392-53DC-4C53-8A17-7EB218FBFD34}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resterer", "..\Resterer\Resterer.csproj", "{EEB58ACC-6548-4034-B219-DF188B4BEED2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +15,6 @@ Global
 		{0C78C38D-63E3-49BA-BF90-EE36B1071727}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C78C38D-63E3-49BA-BF90-EE36B1071727}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C78C38D-63E3-49BA-BF90-EE36B1071727}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2975392-53DC-4C53-8A17-7EB218FBFD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2975392-53DC-4C53-8A17-7EB218FBFD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2975392-53DC-4C53-8A17-7EB218FBFD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2975392-53DC-4C53-8A17-7EB218FBFD34}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEB58ACC-6548-4034-B219-DF188B4BEED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEB58ACC-6548-4034-B219-DF188B4BEED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEB58ACC-6548-4034-B219-DF188B4BEED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEB58ACC-6548-4034-B219-DF188B4BEED2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
